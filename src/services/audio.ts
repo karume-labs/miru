@@ -5,8 +5,8 @@ let errorPlayer: AudioPlayer | null = null;
 
 export async function preloadSounds() {
   try {
-    const successSource = require("@/assets/sounds/success.wav");
-    const errorSource = require("@/assets/sounds/error.wav");
+    const successSource = require("../../assets/sounds/success.wav");
+    const errorSource = require("../../assets/sounds/error.wav");
 
     await preload(successSource);
     await preload(errorSource);
