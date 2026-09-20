@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "minimal",
-    "slug": "minimal",
+    "name": "Miru",
+    "slug": "miru",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "minimal",
+    "scheme": "miru",
     "ios": {
-      "bundleIdentifier": "com.karume-labs.minimal",
+      "bundleIdentifier": "com.karume-labs.miru",
       "userInterfaceStyle": "dark"
     },
     "android": {
@@ -16,7 +16,7 @@
         "foregroundImage": "./assets/images/adaptive-icon.png"
       },
       "predictiveBackGestureEnabled": false,
-      "package": "com.karume_labs.minimal",
+      "package": "com.karume_labs.miru",
       "userInterfaceStyle": "dark"
     },
     "web": {
