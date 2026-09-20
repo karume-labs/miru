@@ -1,5 +1,5 @@
 {
-  "name": "minimal",
+  "name": "miru",
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
@@ -57,6 +57,7 @@
     "expo-av": "^16.0.8",
     "expo-constants": "~57.0.19",
     "expo-haptics": "~57.0.3",
+    "expo-linear-gradient": "^57.0.2",
     "expo-linking": "~57.0.10",
     "expo-router": "~57.0.22",
     "expo-splash-screen": "~57.0.9",

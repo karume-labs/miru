@@ -10,20 +10,20 @@ export function GameOverModal() {
     <Modal visible={status === "game_over"} transparent animationType="fade">
       <View style={styles.overlay}>
         <View style={styles.container}>
-          <Text className="text-4xl font-bold text-red-500 mb-4 font-mono tracking-widest text-center">
+          <Text className="text-4xl font-bold text-white mb-4 font-mono tracking-widest text-center">
             GAME OVER
           </Text>
 
-          <Text className="text-xl text-white mb-8 font-mono text-center">
+          <Text className="text-xl text-white/80 mb-8 font-mono text-center">
             YOU REACHED LEVEL {level}
           </Text>
 
           <Button
             onPress={startGame}
-            className="bg-blue-600 rounded-none border-2 border-white px-8 py-4"
+            className="bg-white/20 rounded-2xl border-4 border-white/50 px-8 py-4"
           >
-            <Text className="text-white font-bold font-mono tracking-widest">
-              INSERT COIN
+            <Text className="text-white font-bold font-mono tracking-widest text-xl">
+              TRY AGAIN
             </Text>
           </Button>
         </View>
@@ -35,15 +35,16 @@ export function GameOverModal() {
 const styles = StyleSheet.create({
   overlay: {
     flex: 1,
-    backgroundColor: "rgba(0,0,0,0.85)",
+    backgroundColor: "rgba(15, 23, 42, 0.8)", // Slate-900 with opacity for glass effect
     justifyContent: "center",
     alignItems: "center",
     padding: 24,
   },
   container: {
-    backgroundColor: "#000",
-    borderWidth: 4,
-    borderColor: "#ef4444",
+    backgroundColor: "rgba(255, 255, 255, 0.1)",
+    borderWidth: 2,
+    borderColor: "rgba(255, 255, 255, 0.2)",
+    borderRadius: 24,
     padding: 32,
     alignItems: "center",
     width: "100%",

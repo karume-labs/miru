@@ -1,3 +1,4 @@
+import { LinearGradient } from "expo-linear-gradient";
 import { Stack } from "expo-router";
 import { View } from "react-native";
 import { Button } from "@/components/ui/button";
@@ -18,7 +19,10 @@ export default function GameScreen() {
   return (
     <>
       <Stack.Screen options={SCREEN_OPTIONS} />
-      <View className="flex-1 bg-black items-center justify-center p-4">
+      <LinearGradient
+        colors={["#0ea5e9", "#2563eb"]} // Vibrant cyan to blue gradient matching logo
+        className="flex-1 items-center justify-center p-4"
+      >
         {status === "idle" ? (
           <View className="items-center justify-center gap-8">
             <Text className="text-4xl font-bold text-white font-mono tracking-widest text-center">
@@ -26,9 +30,9 @@ export default function GameScreen() {
             </Text>
             <Button
               onPress={startGame}
-              className="bg-blue-600 rounded-none border-2 border-white px-8 py-4"
+              className="bg-white/20 rounded-2xl border-4 border-white/50 px-10 py-5"
             >
-              <Text className="text-white font-bold font-mono tracking-widest text-xl">
+              <Text className="text-white font-bold font-mono tracking-widest text-2xl">
                 START
               </Text>
             </Button>
@@ -41,7 +45,7 @@ export default function GameScreen() {
         )}
 
         <GameOverModal />
-      </View>
+      </LinearGradient>
     </>
   );
 }

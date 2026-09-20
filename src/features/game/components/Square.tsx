@@ -35,12 +35,27 @@ export function Square({ isActive, isWrong, onPress, disabled }: SquareProps) {
     const backgroundColor = interpolateColor(
       colorProgress.value,
       [0, 1, 2],
-      ["#3b82f6", "#ffffff", "#ef4444"], // blue-500, white, red-500
+      [
+        "rgba(255, 255, 255, 0)",
+        "rgba(255, 255, 255, 0.95)",
+        "rgba(239, 68, 68, 0.95)",
+      ],
+    );
+
+    const borderColor = interpolateColor(
+      colorProgress.value,
+      [0, 1, 2],
+      [
+        "rgba(255, 255, 255, 0.4)",
+        "rgba(255, 255, 255, 0.95)",
+        "rgba(239, 68, 68, 0.95)",
+      ],
     );
 
     return {
       transform: [{ scale: scale.value }],
       backgroundColor,
+      borderColor,
     };
   });
 
@@ -66,14 +81,8 @@ export function Square({ isActive, isWrong, onPress, disabled }: SquareProps) {
         {
           width: "100%",
           aspectRatio: 1,
-          borderRadius: 8,
-          borderWidth: 2,
-          borderColor: "#1e3a8a", // blue-900
-          shadowColor: "#000",
-          shadowOffset: { width: 0, height: 4 },
-          shadowOpacity: 0.3,
-          shadowRadius: 4,
-          elevation: 5,
+          borderRadius: 24, // Rounder corners to match logo
+          borderWidth: 4, // Thicker hollow border
         },
         animatedStyle,
       ]}
