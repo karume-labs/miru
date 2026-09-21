@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Dimensions, View } from "react-native";
+import { useWindowDimensions, View } from "react-native";
 import { useGameStore } from "@/stores/useGameStore";
 import { Square } from "./Square";
 
@@ -36,10 +36,9 @@ export function Grid() {
     selectSquare(index);
   };
 
+  const { width: screenWidth } = useWindowDimensions();
   const gap = 8;
   const padding = 16;
-  // Dynamic calculation to ensure grid fits on screen
-  const screenWidth = Dimensions.get("window").width;
   const availableWidth = screenWidth - padding * 2;
   // Subtract the gaps to get size per square
   const squareSize = (availableWidth - gap * (gridSize - 1)) / gridSize;
