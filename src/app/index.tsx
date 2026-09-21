@@ -15,13 +15,23 @@ export default function GameScreen() {
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
-      <LinearGradient
-        colors={["#0ea5e9", "#2563eb"]} // Vibrant cyan to blue gradient matching logo
-        className="flex-1"
-      >
-        <SafeAreaView className="flex-1 items-center justify-center p-4">
+      <LinearGradient colors={["#0ea5e9", "#2563eb"]} style={{ flex: 1 }}>
+        <SafeAreaView
+          style={{
+            flex: 1,
+            alignItems: "center",
+            justifyContent: "center",
+            padding: 16,
+          }}
+        >
           {status === "idle" ? (
-            <View className="items-center justify-center gap-8">
+            <View
+              style={{
+                alignItems: "center",
+                justifyContent: "center",
+                gap: 32,
+              }}
+            >
               <Text className="text-4xl font-bold text-white font-mono tracking-widest text-center">
                 MEMORY
               </Text>
@@ -35,7 +45,15 @@ export default function GameScreen() {
               </Button>
             </View>
           ) : (
-            <View className="flex-1 w-full items-center justify-center gap-12">
+            <View
+              style={{
+                flex: 1,
+                width: "100%",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: 48,
+              }}
+            >
               <Header />
               <Grid />
             </View>

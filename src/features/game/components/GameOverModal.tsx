@@ -1,3 +1,4 @@
+import { StyleSheet } from "react-native";
 import {
   AlertDialog,
   AlertDialogContent,
@@ -15,20 +16,15 @@ export function GameOverModal() {
 
   return (
     <AlertDialog open={status === "game_over"}>
-      <AlertDialogContent className="bg-slate-900 border border-slate-700 rounded-3xl">
-        <AlertDialogHeader className="items-center">
-          <AlertDialogTitle className="text-4xl font-bold text-white font-mono tracking-widest text-center">
-            GAME OVER
-          </AlertDialogTitle>
-          <AlertDialogDescription className="text-xl text-white/80 font-mono text-center mt-2">
+      <AlertDialogContent style={styles.content}>
+        <AlertDialogHeader style={styles.header}>
+          <AlertDialogTitle style={styles.title}>GAME OVER</AlertDialogTitle>
+          <AlertDialogDescription style={styles.description}>
             YOU REACHED LEVEL {level}
           </AlertDialogDescription>
         </AlertDialogHeader>
-        <AlertDialogFooter className="mt-8 items-center flex-row justify-center">
-          <Button
-            onPress={startGame}
-            className="bg-white/20 rounded-2xl border-4 border-white/50 px-8 py-4"
-          >
+        <AlertDialogFooter style={styles.footer}>
+          <Button onPress={startGame} style={styles.button}>
             <Text className="text-white font-bold font-mono tracking-widest text-xl">
               TRY AGAIN
             </Text>
@@ -38,3 +34,46 @@ export function GameOverModal() {
     </AlertDialog>
   );
 }
+
+const styles = StyleSheet.create({
+  content: {
+    zIndex: 50,
+    maxWidth: 400,
+    gap: 16,
+    borderWidth: 1,
+    borderColor: "rgba(51, 65, 85, 1)",
+    backgroundColor: "rgb(15, 23, 42)",
+    padding: 24,
+    borderRadius: 24,
+    width: "100%",
+  },
+  header: {
+    alignItems: "center",
+  },
+  title: {
+    fontSize: 30,
+    fontWeight: "bold",
+    color: "white",
+    textAlign: "center",
+  },
+  description: {
+    fontSize: 20,
+    color: "rgba(255, 255, 255, 0.8)",
+    textAlign: "center",
+    marginTop: 8,
+  },
+  footer: {
+    marginTop: 32,
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "center",
+  },
+  button: {
+    backgroundColor: "rgba(255, 255, 255, 0.2)",
+    borderRadius: 16,
+    borderWidth: 4,
+    borderColor: "rgba(255, 255, 255, 0.5)",
+    paddingHorizontal: 32,
+    paddingVertical: 16,
+  },
+});

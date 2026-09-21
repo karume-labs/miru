@@ -2,6 +2,7 @@ import { TextClassContext } from '@/components/ui/text';
 import { cn } from '@/lib/utils';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { Platform, Pressable } from 'react-native';
+import { withUniwind } from 'uniwind';
 
 const buttonVariants = cva(
   cn(
@@ -92,10 +93,12 @@ type ButtonProps = React.ComponentProps<typeof Pressable> &
   React.RefAttributes<typeof Pressable> &
   VariantProps<typeof buttonVariants>;
 
+const StyledPressable = withUniwind(Pressable);
+
 function Button({ className, variant, size, ...props }: ButtonProps) {
   return (
     <TextClassContext.Provider value={buttonTextVariants({ variant, size })}>
-      <Pressable
+      <StyledPressable
         className={cn(props.disabled && 'opacity-50', buttonVariants({ variant, size }), className)}
         role="button"
         {...props}

@@ -3,6 +3,7 @@ import { Slot } from '@rn-primitives/slot';
 import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
 import { Platform, Text as RNText, type Role } from 'react-native';
+import { withUniwind } from 'uniwind';
 
 const textVariants = cva(
   cn(
@@ -64,6 +65,8 @@ const ARIA_LEVEL: Partial<Record<TextVariant, string>> = {
 
 const TextClassContext = React.createContext<string | undefined>(undefined);
 
+const StyledText = withUniwind(RNText);
+
 function Text({
   className,
   asChild = false,
@@ -75,7 +78,7 @@ function Text({
     asChild?: boolean;
   }) {
   const textClass = React.useContext(TextClassContext);
-  const Component = asChild ? Slot : RNText;
+  const Component = asChild ? Slot : StyledText;
   return (
     <Component
       className={cn(textVariants({ variant }), textClass, className)}

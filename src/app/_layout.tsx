@@ -24,7 +24,7 @@ export default function RootLayout() {
   }, []);
 
   return (
-    <GestureHandlerRootView className="flex-1">
+    <GestureHandlerRootView style={{ flex: 1 }}>
       <SafeAreaProvider>
         <ThemeProvider value={NAV_THEME[theme ?? "light"]}>
           <StatusBar style={theme === "dark" ? "light" : "dark"} />
